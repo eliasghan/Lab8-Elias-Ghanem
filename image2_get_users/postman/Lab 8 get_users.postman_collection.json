@@ -1,0 +1,41 @@
+{
+  "info": {
+    "_postman_id": "c5b0377b-3f24-4794-9812-5bc12e6a752b",
+    "name": "Lab 8 get_users API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get user names",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/get_users",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "get_users"
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status is 200', () => pm.response.to.have.status(200));",
+              "pm.test('Returns a list of names', () => {",
+              "  const body = pm.response.json();",
+              "  pm.expect(body).to.be.an('array');",
+              "  body.forEach(n => pm.expect(n).to.be.a('string'));",
+              "});"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
