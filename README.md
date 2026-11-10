@@ -91,6 +91,14 @@ curl http://localhost:3000/get_users
 
 On first start, the app creates the SQLite `users` table and inserts the default users.
 
+## Docker Desktop
+
+Both images built and running in Docker Desktop:
+
+![Docker Desktop Images tab](screenshots/11_docker_desktop_images.png)
+
+![Docker Desktop Containers tab](screenshots/12_docker_desktop_containers.png)
+
 ## Changes from the handout
 
 - **Base image:** `python:3.12-alpine` instead of `python:3.8-alpine`. Python 3.8
